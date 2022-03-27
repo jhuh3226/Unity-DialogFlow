@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Newtonsoft.Json;
 using Syrus.Plugins.DFV2Client;
 using UnityEngine;
+using UnityEngine.Android;
 using UnityEngine.UI;
 
 public class DF2ClientAudioTester : MonoBehaviour {
@@ -37,7 +38,6 @@ public class DF2ClientAudioTester : MonoBehaviour {
 		// string sessionName = GetSessionName ();
 		string sessionName = null;
 
-
 		client.ChatbotResponded += LogResponseText;
 		client.DetectIntentError += LogError;
 		client.ReactToContext ("DefaultWelcomeIntent-followup",
@@ -55,14 +55,28 @@ public class DF2ClientAudioTester : MonoBehaviour {
 		WaitingPanel.SetActive (false);
 		WaitingRecord.SetActive (false);
 
+		// added, asking micriphone permit to user
+#if UNITY_ANDROID
+		CheckPermission ();
+#endif
+	}
+
+	// added, asking micriphone permit to user
+	void CheckPermission () {
+#if UNITY_ANDROID
+		if (!Permission.HasUserAuthorizedPermission (Permission.Microphone)) {
+			Permission.RequestUserPermission (Permission.Microphone);
+		}
+#endif
 	}
 
 	public void OnChangeLanguageButton () {
 		isEnglish = !isEnglish;
 
 		if (isEnglish) {
-			languageCode = "en-US";
+			languageCode = "en-US-Wavenet-I";
 			LangueButtonText.text = "English";
+			// en-US-Wavenet-H	
 		} else {
 			languageCode = "ja";
 			LangueButtonText.text = "Japanese";
@@ -99,7 +113,7 @@ public class DF2ClientAudioTester : MonoBehaviour {
 		audioPlayer.clip = clip;
 
 		// changed to invoke
-		Invoke ("playAudio", 2f);
+		Invoke ("playAudio", 1.5f);
 		// audioPlayer.Play();
 
 	}
