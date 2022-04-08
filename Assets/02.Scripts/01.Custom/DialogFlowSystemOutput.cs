@@ -6,15 +6,19 @@ using UnityEngine;
 // Applies that to change of animation
 public class DialogFlowSystemOutput : MonoBehaviour {
     public string userInput, previousUserInput = null;
-
     public string systemOutput, previousSystemOutput = null;
 
     public GameObject dolphin;
+    private Vector3 scaleChange;
     Animator m_Animator;
 
     // Start is called before the first frame update
     void Start () {
         m_Animator = dolphin.GetComponent<Animator> ();
+    }
+
+    void Awake () {
+        scaleChange = new Vector3 (3f, 3f, 3f);
     }
 
     // once the string value changes, check the value
@@ -36,7 +40,20 @@ public class DialogFlowSystemOutput : MonoBehaviour {
                 m_Animator.SetBool ("IsNodHead", true);
             }
 
+            if (systemOutput == "Oh no! I may look small now but in fact gigantic. There's the way I can show you, wait!") {
+                Debug.Log ("Change the size of the dolphin");
+
+                // dolphin.transform.localScale = new Vector3 (2f, 2f, 2f);
+                Invoke("ScaleUp", 6f);
+            }
+
             previousSystemOutput = systemOutput;
+        }
+    }
+
+    void ScaleUp () {
+        if (dolphin.transform.localScale.x < 3f) {
+            dolphin.transform.localScale += scaleChange;
         }
     }
 }
