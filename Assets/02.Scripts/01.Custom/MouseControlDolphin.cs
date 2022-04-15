@@ -12,10 +12,10 @@ public class MouseControlDolphin : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        if (Input.GetKeyDown (KeyCode.RightArrow)) {
-            right += 0.001f;
-            dolphin.transform.position = new Vector3 (dolphin.transform.position.x + right, dolphin.transform.position.y, dolphin.transform.position.z);
-            Debug.Log ("Up Arrow key was pressed.");
-        }
+        // if (Input.GetKeyDown (KeyCode.RightArrow)) {
+        //     right += 0.001f;
+        //     dolphin.transform.position = new Vector3 (dolphin.transform.position.x + right, dolphin.transform.position.y, dolphin.transform.position.z);
+        //     Debug.Log ("Up Arrow key was pressed.");
+        // }
     }
 }
