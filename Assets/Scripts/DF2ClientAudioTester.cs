@@ -19,6 +19,7 @@ public class DF2ClientAudioTester : MonoBehaviour {
 
 	public Text LangueButtonText;
 
+	// en-US-Wavenet-F
 	private string languageCode = "en-US";
 
 	private bool isEnglish = true;
@@ -74,7 +75,7 @@ public class DF2ClientAudioTester : MonoBehaviour {
 		isEnglish = !isEnglish;
 
 		if (isEnglish) {
-			languageCode = "en-US-Wavenet-I";
+			languageCode = "en-US";
 			LangueButtonText.text = "English";
 			// en-US-Wavenet-H	
 		} else {
@@ -113,7 +114,7 @@ public class DF2ClientAudioTester : MonoBehaviour {
 		audioPlayer.clip = clip;
 
 		// changed to invoke
-		Invoke ("playAudio", 1.5f);
+		Invoke ("playAudio", 1f);
 		// audioPlayer.Play();
 
 	}
@@ -152,8 +153,15 @@ public class DF2ClientAudioTester : MonoBehaviour {
 		//client.AddEntityType(names, sessionName);
 		//client.AddEntityType(items, sessionName);
 
+		Debug.Log ("content.text: " + content.text + " sessionName: " + sessionName);
+
 		client.DetectIntentFromText (content.text, sessionName, languageCode);
 
+	}
+
+	public float SendResponse (float data) {
+		client.DetectIntentFromText (data.ToString(), "DefaultSession", "en-US");
+		return data;
 	}
 
 	public void SendEvent () {

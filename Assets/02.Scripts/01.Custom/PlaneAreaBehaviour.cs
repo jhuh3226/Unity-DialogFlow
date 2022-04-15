@@ -4,11 +4,13 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
+// using System.Globalization;
 
 [RequireComponent (typeof (ARRaycastManager), typeof (AudioSource), typeof (ARPlaneManager))]
 public class PlaneAreaBehaviour : MonoBehaviour {
     public TextMeshPro areaText;
     public ARPlane arPlane;
+    public float area = 0;
 
     // Start is called before the first frame update
     void Start () {
@@ -24,7 +26,7 @@ public class PlaneAreaBehaviour : MonoBehaviour {
         Debug.Log ("ArPlane_BoundaryChanged");
         areaText.text = CalculatePlaneArea (arPlane).ToString ();
     }
-    private float CalculatePlaneArea (ARPlane plane) {
+    public float CalculatePlaneArea (ARPlane plane) {
         return plane.size.x * plane.size.y;
     }
 
@@ -40,5 +42,6 @@ public class PlaneAreaBehaviour : MonoBehaviour {
     public void ArPlane_AskCalculation () {
         Debug.Log ("Ask for calculation");
         areaText.text = CalculatePlaneArea (arPlane).ToString ();
+        area = CalculatePlaneArea (arPlane);
     }
 }

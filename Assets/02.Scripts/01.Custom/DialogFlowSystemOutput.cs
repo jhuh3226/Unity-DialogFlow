@@ -6,10 +6,11 @@ using UnityEngine;
 // Applies that to change of animation
 public class DialogFlowSystemOutput : MonoBehaviour {
     public string userInput, previousUserInput = null;
-    public string systemOutput, previousSystemOutput = null;
+    public string systemOutput, previousSystemOutput = null; // systemOuput is the dialogflow's response
 
-    public GameObject dolphin;
+    public GameObject dolphin, arSessionOrigin, dfClient;
     private Vector3 scaleChange;
+    float area;
     Animator m_Animator;
 
     // Start is called before the first frame update
@@ -21,14 +22,10 @@ public class DialogFlowSystemOutput : MonoBehaviour {
         scaleChange = new Vector3 (3f, 3f, 3f);
     }
 
-    // once the string value changes, check the value
+    // once the string value changes, check the value and respond
     void Update () {
         if (userInput != previousUserInput) {
             Debug.Log ("new user input detected");
-            // if(userInput == ""){
-            //     Debug.Log ("Change animation");
-            // }
-
             previousUserInput = userInput;
         }
 
@@ -44,7 +41,7 @@ public class DialogFlowSystemOutput : MonoBehaviour {
                 Debug.Log ("Change the size of the dolphin");
 
                 // dolphin.transform.localScale = new Vector3 (2f, 2f, 2f);
-                Invoke("ScaleUp", 6f);
+                Invoke ("ScaleUp", 6f);
             }
 
             previousSystemOutput = systemOutput;
@@ -55,5 +52,12 @@ public class DialogFlowSystemOutput : MonoBehaviour {
         if (dolphin.transform.localScale.x < 3f) {
             dolphin.transform.localScale += scaleChange;
         }
+    }
+
+    // once the user clicks the button, then it sends the size to the dialogflow and play the certain intent?
+    public void GetArea () {
+        var area = arSessionOrigin.GetComponent<PlaneAreaManager> ().area;
+        Debug.Log(area);
+        dfClient.GetComponent<DF2ClientAudioTester>().SendResponse(area);
     }
 }

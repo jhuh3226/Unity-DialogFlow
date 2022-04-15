@@ -25,6 +25,10 @@ namespace UnityEngine.XR.ARFoundation.Samples
             set { m_TogglePlaneDetectionText = value; }
         }
 
+        void Start(){
+            m_ARPlaneManager.enabled = false;
+        }
+
         /// <summary>
         /// Toggles plane detection and the visualization of the planes.
         /// </summary>
