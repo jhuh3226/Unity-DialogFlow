@@ -30,6 +30,9 @@ public class DF2ClientAudioTester : MonoBehaviour {
 
 	public GameObject eventSystem;
 	// Start is called before the first frame update
+
+	public string petitionText = "";
+
 	void Start () {
 		client = GetComponent<DialogFlowV2Client> ();
 
@@ -106,6 +109,10 @@ public class DF2ClientAudioTester : MonoBehaviour {
 
 		chatbotText.text = response.queryResult.queryText + "\n";
 
+		petitionText = response.queryResult.queryText + "!";		// passing the word outputPetition
+
+		Debug.Log ("petitionText: " + petitionText);
+
 		chatbotText.text += response.queryResult.fulfillmentText;
 
 		byte[] audioBytes = Convert.FromBase64String (response.OutputAudio);
@@ -159,8 +166,9 @@ public class DF2ClientAudioTester : MonoBehaviour {
 
 	}
 
+	// send string response to dialogflow
 	public float SendResponse (float data) {
-		client.DetectIntentFromText (data.ToString(), "DefaultSession", "en-US");
+		client.DetectIntentFromText (data.ToString (), "DefaultSession", "en-US");
 		return data;
 	}
 
