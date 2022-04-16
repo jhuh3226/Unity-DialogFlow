@@ -555,34 +555,20 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 236891138, guid: d060c65cfee2f401e9bb7322bb04df49, type: 3}
-      propertyPath: playerSpeed
-      value: 0.5
-      objectReference: {fileID: 0}
+      propertyPath: joystick
+      value: 
+      objectReference: {fileID: 1485140679}
     - target: {fileID: 236891138, guid: d060c65cfee2f401e9bb7322bb04df49, type: 3}
-      propertyPath: turnSmoothTime
-      value: 0.5
+      propertyPath: _animator
+      value: 
+      objectReference: {fileID: 236891140}
+    - target: {fileID: 236891138, guid: d060c65cfee2f401e9bb7322bb04df49, type: 3}
+      propertyPath: tiltAngle
+      value: 0.001
       objectReference: {fileID: 0}
     - target: {fileID: 236891139, guid: d060c65cfee2f401e9bb7322bb04df49, type: 3}
       propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 236891142, guid: d060c65cfee2f401e9bb7322bb04df49, type: 3}
-      propertyPath: m_Height
-      value: 0.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 236891142, guid: d060c65cfee2f401e9bb7322bb04df49, type: 3}
-      propertyPath: m_Radius
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1571050855630948701, guid: d060c65cfee2f401e9bb7322bb04df49,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1571050855630948701, guid: d060c65cfee2f401e9bb7322bb04df49,
-        type: 3}
-      propertyPath: m_ApplyRootMotion
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4840616130769392423, guid: d060c65cfee2f401e9bb7322bb04df49,
         type: 3}
@@ -649,6 +635,12 @@ PrefabInstance:
 --- !u!1 &236891137 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5217000249125063069, guid: d060c65cfee2f401e9bb7322bb04df49,
+    type: 3}
+  m_PrefabInstance: {fileID: 230493088}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &236891140 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1571050855630948701, guid: d060c65cfee2f401e9bb7322bb04df49,
     type: 3}
   m_PrefabInstance: {fileID: 230493088}
   m_PrefabAsset: {fileID: 0}
@@ -1658,6 +1650,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Fixed Joystick
+      objectReference: {fileID: 0}
+    - target: {fileID: 2929252283123773951, guid: aaa2c939c0359ac4dbce3f49e8b90252,
+        type: 3}
+      propertyPath: handleRange
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 2929252285020697097, guid: aaa2c939c0359ac4dbce3f49e8b90252,
         type: 3}
@@ -3389,13 +3386,25 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1485140677}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e9d677f1681015749b15c436eec6d880, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_MovementRange: 30
+  m_MovementRange: 20
   m_ControlPath: <Gamepad>/leftStick
+--- !u!114 &1485140679 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2929252283123773951, guid: aaa2c939c0359ac4dbce3f49e8b90252,
+    type: 3}
+  m_PrefabInstance: {fileID: 754494853}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1485140677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45977bbae16431c46a013576a1aea384, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1504374145
 GameObject:
   m_ObjectHideFlags: 0
@@ -3448,7 +3457,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: f77b8a8d8cced4e5a9bc146b258b3b59, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
