@@ -9,7 +9,7 @@ public class OutputPetition : MonoBehaviour {
     [SerializeField] private TextMeshProUGUI textMeshPro;
     [SerializeField] private GameObject dfClient;
     string petition;
-    TextInfo textInfo;
+    TextInfo textInfo;      // https://docs.microsoft.com/en-us/dotnet/api/system.globalization.textinfo.totitlecase?view=net-6.0
     void Start () {
         textInfo = new CultureInfo ("en-US", false).TextInfo;
 
