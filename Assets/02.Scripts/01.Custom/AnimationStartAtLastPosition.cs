@@ -14,8 +14,8 @@ public class AnimationStartAtLastPosition : MonoBehaviour {
     }
 
     void Update () {
-        Debug.Log ("anim position: " + anim.transform.position);
-        Debug.Log ("position: " + dolphinChild.transform.position);
+        // Debug.Log ("anim position: " + anim.transform.position);
+        // Debug.Log ("position: " + dolphinChild.transform.position);
 
         if (isTalk) {
             AnimationFinished ();

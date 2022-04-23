@@ -16,19 +16,19 @@ public class ControlDolphinLocation : MonoBehaviour {
     void Start () {
         // targetPoint = new Vector3 (0, 0, 0.8f);
         controller = GetComponent<CharacterController> ();
-        targetPoint = new Vector3 (arCamera.transform.position.x, arCamera.transform.position.y, arCamera.transform.position.z + 0.8f);
+        // targetPoint = new Vector3 (arCamera.transform.position.x, arCamera.transform.position.y, arCamera.transform.position.z + 0.8f);
+        targetPoint = new Vector3 (0, 0, 0.8f);
         audioSource = GetComponent<AudioSource> ();
     }
 
     void Update () {
         //Given some means of determining a target point.
         // var targetPoint = FindTargetPoint ();
-        //However you want to do that.
-        targetPoint = new Vector3 (arCamera.transform.position.x, arCamera.transform.position.y, arCamera.transform.position.z + 0.8f); // camera position always changes
+        // targetPoint = new Vector3 (arCamera.transform.position.x, arCamera.transform.position.y, arCamera.transform.position.z + 0.8f); // camera position always changes
         if (moveTowardCamera) MoveTowardsTarget ();
     }
 
-    void MoveTowardsTarget () {
+    public void MoveTowardsTarget () {
         var offset = targetPoint - transform.position;
         var offsetRotation = 180 - transform.localRotation.eulerAngles.y;
         //Get the difference.
@@ -40,6 +40,7 @@ public class ControlDolphinLocation : MonoBehaviour {
             offset = offset.normalized * moveSpeed;
             //normalize it and account for movement speed.
             controller.Move (offset * Time.deltaTime);
+            transform.position = new Vector3 (transform.position.x, 0, transform.position.z);   // set this 0 as y positiog keeps becoming 0.035f
             transform.Rotate (0.0f, offsetRotation * Time.deltaTime * (1 / moveSpeed), 0.0f);
             //actually move the character.
         } else {

@@ -113,6 +113,7 @@ public class DF2ClientAudioTester : MonoBehaviour {
 		string chatbotResponse = response.queryResult.fulfillmentText;
 		string speak = "<speak>";
 		string speakEnd = "</speak>";
+
 		chatbotResponse = chatbotResponse.Replace (speak, "");
 		chatbotResponse = chatbotResponse.Replace (speakEnd, "");
 		chatbotText.text = chatbotResponse; // Chatbot's reply
@@ -146,6 +147,7 @@ public class DF2ClientAudioTester : MonoBehaviour {
 	//@hoatong
 	public void SendAudio (string audioString) {
 		WaitingPanel.SetActive (true);
+		// isWaitingPanelOn = true;	// change ui 
 		string sessionName = GetSessionName ();
 		client.DetectIntentFromAudio (audioString, sessionName, languageCode);
 	}
@@ -209,18 +211,26 @@ public class DF2ClientAudioTester : MonoBehaviour {
 	private float startRecordingTime;
 
 	private bool isRecording = false;
+	bool isWaitingPanelOn = false;
 
 	public Text recordButtonText;
+
+	public Sprite squeakImg,sendImg;
+	public GameObject btnRecord;
+
 
 	public void OnButtonRecord () {
 		if (!isRecording) {
 			StartRecord ();
 			isRecording = true;
-			recordButtonText.text = "Send translation";
+			recordButtonText.text = "Send to dolphin";
+			btnRecord.GetComponent<Image>().sprite = sendImg; 	// change the btn image
+
 		} else {
 			isRecording = false;
-			recordButtonText.text = "Talk";
+			recordButtonText.text = "Squeak!";
 			AudioClip recorded = StopRecord ();
+			btnRecord.GetComponent<Image>().sprite = squeakImg;		// change the btn image
 
 			byte[] audioBytes = WavUtility.FromAudioClip (recorded);
 			string audioString = Convert.ToBase64String (audioBytes);
