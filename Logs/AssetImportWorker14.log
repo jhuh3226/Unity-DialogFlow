@@ -4911,3 +4911,238 @@ Total: 6.983738 ms (FindLiveObjects: 0.421861 ms CreateObjectMapping: 0.171631 m
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.011347 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 1.51 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+UnityEngine.Assertions.AssertionException: Assertion failure. Value was Null
+Expected: Value was not Null
+  at UnityEngine.Assertions.Assert.Fail (System.String message, System.String userMessage) [0x0003c] in /Users/bokken/buildslave/unity/build/Runtime/Export/Assertions/Assert/AssertBase.cs:29 
+  at UnityEngine.Assertions.Assert.IsNotNull[T] (T value, System.String message) [0x00042] in /Users/bokken/buildslave/unity/build/Runtime/Export/Assertions/Assert/AssertNull.cs:50 
+  at UnityEngine.Assertions.Assert.IsNotNull[T] (T value) [0x00001] in /Users/bokken/buildslave/unity/build/Runtime/Export/Assertions/Assert/AssertNull.cs:38 
+  at ARFoundationRemote.Editor.ARFaceEditorMemorySafetyErrorFixer.IsFixApplied () [0x00016] in /Users/junghuh/Documents/GitHub/Unity-DialogFlow/Packages/com.kyrylokuzyk.arfoundationremote/Editor/FixesForEditorSupport/ARFaceEditorMemorySafetyErrorFixer.cs:34 
+  at ARFoundationRemote.Editor.ARFaceEditorMemorySafetyErrorFixer.ApplyIfNeeded () [0x00000] in /Users/junghuh/Documents/GitHub/Unity-DialogFlow/Packages/com.kyrylokuzyk.arfoundationremote/Editor/FixesForEditorSupport/ARFaceEditorMemorySafetyErrorFixer.cs:15 
+  at ARFoundationRemote.Editor.FixesForEditorSupport.Apply (System.Boolean force) [0x00012] in /Users/junghuh/Documents/GitHub/Unity-DialogFlow/Packages/com.kyrylokuzyk.arfoundationremote/Editor/FixesForEditorSupport/FixesForEditorSupport.cs:18 
+  at ARFoundationRemote.Editor.FixesForEditorSupport..cctor () [0x00000] in /Users/junghuh/Documents/GitHub/Unity-DialogFlow/Packages/com.kyrylokuzyk.arfoundationremote/Editor/FixesForEditorSupport/FixesForEditorSupport.cs:11 
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[]) (at /Users/bokken/buildslave/unity/build/Editor/Mono/EditorAssemblies.cs:118)
+
+(Filename: /Users/bokken/buildslave/unity/build/Editor/Mono/EditorAssemblies.cs Line: 118)
+
+Mono: successfully reloaded assembly
+- Completed reload, in  3.084 seconds
+Platform modules already initialized, skipping
+Switching build target platform(2) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(589824) extendedPlatform(0)
+Refreshing native plugins compatible for Editor in 1.27 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3386 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 294.3 MB.
+System memory in use after: 294.5 MB.
+
+Unloading 64 unused Assets to reduce memory usage. Loaded Objects now: 4327.
+Total: 9.191365 ms (FindLiveObjects: 0.495424 ms CreateObjectMapping: 0.207894 ms MarkObjects: 8.427606 ms  DeleteObjects: 0.058522 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+========================================================================
+Received Import Request.
+  Time since last request: 8175.873482 seconds.
+  path: Assets/06.Textures/dolphin_low_defaultMat_Normal.1001.png
+  artifactKey: Guid(d06adf7fe868c4d1fba613f2613b2779) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/06.Textures/dolphin_low_defaultMat_Normal.1001.png using Guid(d06adf7fe868c4d1fba613f2613b2779) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ace769bca4a15f5e032345e8a6e143b6') in 0.708694 seconds
+  Import took 0.951788 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001876 seconds.
+  path: Assets/06.Textures/dolphin_low_defaultMat_Normal.1001.png
+  artifactKey: Guid(d06adf7fe868c4d1fba613f2613b2779) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/06.Textures/dolphin_low_defaultMat_Normal.1001.png using Guid(d06adf7fe868c4d1fba613f2613b2779) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ace769bca4a15f5e032345e8a6e143b6') in 0.073522 seconds
+  Import took 0.080627 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.009581 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 1.34 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+UnityEngine.Assertions.AssertionException: Assertion failure. Value was Null
+Expected: Value was not Null
+  at UnityEngine.Assertions.Assert.Fail (System.String message, System.String userMessage) [0x0003c] in /Users/bokken/buildslave/unity/build/Runtime/Export/Assertions/Assert/AssertBase.cs:29 
+  at UnityEngine.Assertions.Assert.IsNotNull[T] (T value, System.String message) [0x00042] in /Users/bokken/buildslave/unity/build/Runtime/Export/Assertions/Assert/AssertNull.cs:50 
+  at UnityEngine.Assertions.Assert.IsNotNull[T] (T value) [0x00001] in /Users/bokken/buildslave/unity/build/Runtime/Export/Assertions/Assert/AssertNull.cs:38 
+  at ARFoundationRemote.Editor.ARFaceEditorMemorySafetyErrorFixer.IsFixApplied () [0x00016] in /Users/junghuh/Documents/GitHub/Unity-DialogFlow/Packages/com.kyrylokuzyk.arfoundationremote/Editor/FixesForEditorSupport/ARFaceEditorMemorySafetyErrorFixer.cs:34 
+  at ARFoundationRemote.Editor.ARFaceEditorMemorySafetyErrorFixer.ApplyIfNeeded () [0x00000] in /Users/junghuh/Documents/GitHub/Unity-DialogFlow/Packages/com.kyrylokuzyk.arfoundationremote/Editor/FixesForEditorSupport/ARFaceEditorMemorySafetyErrorFixer.cs:15 
+  at ARFoundationRemote.Editor.FixesForEditorSupport.Apply (System.Boolean force) [0x00012] in /Users/junghuh/Documents/GitHub/Unity-DialogFlow/Packages/com.kyrylokuzyk.arfoundationremote/Editor/FixesForEditorSupport/FixesForEditorSupport.cs:18 
+  at ARFoundationRemote.Editor.FixesForEditorSupport..cctor () [0x00000] in /Users/junghuh/Documents/GitHub/Unity-DialogFlow/Packages/com.kyrylokuzyk.arfoundationremote/Editor/FixesForEditorSupport/FixesForEditorSupport.cs:11 
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[]) (at /Users/bokken/buildslave/unity/build/Editor/Mono/EditorAssemblies.cs:118)
+
+(Filename: /Users/bokken/buildslave/unity/build/Editor/Mono/EditorAssemblies.cs Line: 118)
+
+Mono: successfully reloaded assembly
+- Completed reload, in  3.314 seconds
+Platform modules already initialized, skipping
+Switching build target platform(2) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(589824) extendedPlatform(0)
+Refreshing native plugins compatible for Editor in 1.09 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3386 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 294.8 MB.
+System memory in use after: 295.1 MB.
+
+Unloading 64 unused Assets to reduce memory usage. Loaded Objects now: 4331.
+Total: 10.279571 ms (FindLiveObjects: 0.584625 ms CreateObjectMapping: 0.205254 ms MarkObjects: 8.745961 ms  DeleteObjects: 0.740839 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.016284 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 1.36 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+UnityEngine.Assertions.AssertionException: Assertion failure. Value was Null
+Expected: Value was not Null
+  at UnityEngine.Assertions.Assert.Fail (System.String message, System.String userMessage) [0x0003c] in /Users/bokken/buildslave/unity/build/Runtime/Export/Assertions/Assert/AssertBase.cs:29 
+  at UnityEngine.Assertions.Assert.IsNotNull[T] (T value, System.String message) [0x00042] in /Users/bokken/buildslave/unity/build/Runtime/Export/Assertions/Assert/AssertNull.cs:50 
+  at UnityEngine.Assertions.Assert.IsNotNull[T] (T value) [0x00001] in /Users/bokken/buildslave/unity/build/Runtime/Export/Assertions/Assert/AssertNull.cs:38 
+  at ARFoundationRemote.Editor.ARFaceEditorMemorySafetyErrorFixer.IsFixApplied () [0x00016] in /Users/junghuh/Documents/GitHub/Unity-DialogFlow/Packages/com.kyrylokuzyk.arfoundationremote/Editor/FixesForEditorSupport/ARFaceEditorMemorySafetyErrorFixer.cs:34 
+  at ARFoundationRemote.Editor.ARFaceEditorMemorySafetyErrorFixer.ApplyIfNeeded () [0x00000] in /Users/junghuh/Documents/GitHub/Unity-DialogFlow/Packages/com.kyrylokuzyk.arfoundationremote/Editor/FixesForEditorSupport/ARFaceEditorMemorySafetyErrorFixer.cs:15 
+  at ARFoundationRemote.Editor.FixesForEditorSupport.Apply (System.Boolean force) [0x00012] in /Users/junghuh/Documents/GitHub/Unity-DialogFlow/Packages/com.kyrylokuzyk.arfoundationremote/Editor/FixesForEditorSupport/FixesForEditorSupport.cs:18 
+  at ARFoundationRemote.Editor.FixesForEditorSupport..cctor () [0x00000] in /Users/junghuh/Documents/GitHub/Unity-DialogFlow/Packages/com.kyrylokuzyk.arfoundationremote/Editor/FixesForEditorSupport/FixesForEditorSupport.cs:11 
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[]) (at /Users/bokken/buildslave/unity/build/Editor/Mono/EditorAssemblies.cs:118)
+
+(Filename: /Users/bokken/buildslave/unity/build/Editor/Mono/EditorAssemblies.cs Line: 118)
+
+Mono: successfully reloaded assembly
+- Completed reload, in  2.783 seconds
+Platform modules already initialized, skipping
+Switching build target platform(2) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(589824) extendedPlatform(0)
+Refreshing native plugins compatible for Editor in 1.14 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3386 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 295.1 MB.
+System memory in use after: 295.4 MB.
+
+Unloading 64 unused Assets to reduce memory usage. Loaded Objects now: 4335.
+Total: 7.111420 ms (FindLiveObjects: 0.486562 ms CreateObjectMapping: 0.223059 ms MarkObjects: 6.351540 ms  DeleteObjects: 0.048649 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.009833 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 1.37 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+UnityEngine.Assertions.AssertionException: Assertion failure. Value was Null
+Expected: Value was not Null
+  at UnityEngine.Assertions.Assert.Fail (System.String message, System.String userMessage) [0x0003c] in /Users/bokken/buildslave/unity/build/Runtime/Export/Assertions/Assert/AssertBase.cs:29 
+  at UnityEngine.Assertions.Assert.IsNotNull[T] (T value, System.String message) [0x00042] in /Users/bokken/buildslave/unity/build/Runtime/Export/Assertions/Assert/AssertNull.cs:50 
+  at UnityEngine.Assertions.Assert.IsNotNull[T] (T value) [0x00001] in /Users/bokken/buildslave/unity/build/Runtime/Export/Assertions/Assert/AssertNull.cs:38 
+  at ARFoundationRemote.Editor.ARFaceEditorMemorySafetyErrorFixer.IsFixApplied () [0x00016] in /Users/junghuh/Documents/GitHub/Unity-DialogFlow/Packages/com.kyrylokuzyk.arfoundationremote/Editor/FixesForEditorSupport/ARFaceEditorMemorySafetyErrorFixer.cs:34 
+  at ARFoundationRemote.Editor.ARFaceEditorMemorySafetyErrorFixer.ApplyIfNeeded () [0x00000] in /Users/junghuh/Documents/GitHub/Unity-DialogFlow/Packages/com.kyrylokuzyk.arfoundationremote/Editor/FixesForEditorSupport/ARFaceEditorMemorySafetyErrorFixer.cs:15 
+  at ARFoundationRemote.Editor.FixesForEditorSupport.Apply (System.Boolean force) [0x00012] in /Users/junghuh/Documents/GitHub/Unity-DialogFlow/Packages/com.kyrylokuzyk.arfoundationremote/Editor/FixesForEditorSupport/FixesForEditorSupport.cs:18 
+  at ARFoundationRemote.Editor.FixesForEditorSupport..cctor () [0x00000] in /Users/junghuh/Documents/GitHub/Unity-DialogFlow/Packages/com.kyrylokuzyk.arfoundationremote/Editor/FixesForEditorSupport/FixesForEditorSupport.cs:11 
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[]) (at /Users/bokken/buildslave/unity/build/Editor/Mono/EditorAssemblies.cs:118)
+
+(Filename: /Users/bokken/buildslave/unity/build/Editor/Mono/EditorAssemblies.cs Line: 118)
+
+Mono: successfully reloaded assembly
+- Completed reload, in  2.203 seconds
+Platform modules already initialized, skipping
+Switching build target platform(2) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(589824) extendedPlatform(0)
+Refreshing native plugins compatible for Editor in 1.25 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3386 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 295.4 MB.
+System memory in use after: 295.6 MB.
+
+Unloading 64 unused Assets to reduce memory usage. Loaded Objects now: 4339.
+Total: 7.530814 ms (FindLiveObjects: 0.631593 ms CreateObjectMapping: 0.231512 ms MarkObjects: 6.625430 ms  DeleteObjects: 0.040614 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.009208 seconds.
+Callback registration failed. Increase kMaxCallback.
+
+Fatal Error! Callback registration failed. Increase kMaxCallback.
+
+Obtained 42 stack frames.
+#0  0x007fff204b592e in __pthread_kill
+#1  0x007fff20439406 in abort
+#2  0x0000010cd2f82e in CrashDontLaunchBugReporter()
+#3  0x0000010a9ae697 in EditorMonoConsole::LogToConsoleImplementation(CppLogEntry const&)
+#4  0x0000010a9ada6c in EditorMonoConsole::LogToConsoleImplementation(DebugStringToFileData const&)
+#5  0x0000010a9af42e in LogToConsoleImplementation(DebugStringToFileData const&)
+#6  0x0000010c77a0bd in DebugStringToFilePostprocessedStacktrace(DebugStringToFileData const&)
+#7  0x0000010c77a9a3 in DebugStringToFile(DebugStringToFileData const&)
+#8  0x000001083c31f4 in CallbackArrayBase<void (*)(AssemblyLoadFailure), void (*)(void const*, AssemblyLoadFailure)>::Register(void (*)(AssemblyLoadFailure), void (*)(void const*, AssemblyLoadFailure), void const*)
+#9  0x0000010b346c98 in LoadDomainAndUserAssemblies(bool)
+#10 0x0000010b34968e in LoadUserAssemblies()
+#11 0x0000010b82eaa9 in AssetImportWorkerClient::ReloadMonoDomain(AssetResolver&)
+#12 0x0000010b859d8e in core::mutable_function<void ()>::DispatchT<void IOService::PostHelper<AssetImportWorkerClient::HandleMessage(PrepareMessage const&)::$_5>(AssetImportWorkerClient::HandleMessage(PrepareMessage const&)::$_5&&, IOService::WrapCallableInFunctionTag)::'lambda'()>::Dispatch()
+#13 0x0000010b8cda30 in asio::detail::completion_handler<core::mutable_function<void ()> >::do_complete(asio::detail::task_io_service*, asio::detail::task_io_service_operation*, std::__1::error_code const&, unsigned long)
+#14 0x0000010b8cacf5 in asio::detail::task_io_service::do_run_one(asio::detail::scoped_lock<asio::detail::posix_mutex>&, asio::detail::task_io_service_thread_info&, std::__1::error_code const&)
+#15 0x0000010b8ca791 in asio::detail::task_io_service::run(std::__1::error_code&)
+#16 0x0000010b8c4a5a in IOService::Run(bool)
+#17 0x0000010b821e8c in RunAssetImporterV2()
+#18 0x0000010ab258a3 in Application::InitializeProject()
+#19 0x0000010cd3b19d in -[EditorApplication applicationDidFinishLaunching:]
+#20 0x007fff205d1a53 in __CFNOTIFICATIONCENTER_IS_CALLING_OUT_TO_AN_OBSERVER__
+#21 0x007fff2066d4d9 in ___CFXRegistrationPost_block_invoke
+#22 0x007fff2066d454 in _CFXRegistrationPost
+#23 0x007fff205a2cce in _CFXNotificationPost
+#24 0x007fff21314bb8 in -[NSNotificationCenter postNotificationName:object:userInfo:]
+#25 0x007fff22dec440 in -[NSApplication _postDidFinishNotification]
+#26 0x007fff22dec192 in -[NSApplication _sendFinishLaunchingNotification]
+#27 0x007fff22de9331 in -[NSApplication(NSAppleEventHandling) _handleAEOpenEvent:]
+#28 0x007fff22de8f87 in -[NSApplication(NSAppleEventHandling) _handleCoreEvent:withReplyEvent:]
+#29 0x007fff21340306 in -[NSAppleEventManager dispatchRawAppleEvent:withRawReply:handlerRefCon:]
+#30 0x007fff21340176 in _NSAppleEventManagerGenericHandler
+#31 0x007fff263bc7f3 in _AppleEventsCheckInAppWithBlock
+#32 0x007fff263bbf0e in _AppleEventsCheckInAppWithBlock
+#33 0x007fff263b4c23 in aeProcessAppleEvent
+#34 0x007fff288338a2 in AEProcessAppleEvent
+#35 0x007fff22de3610 in _DPSNextEvent
+#36 0x007fff22de1945 in -[NSApplication(NSEvent) _nextEventMatchingEventMask:untilDate:inMode:dequeue:]
+#37 0x007fff22dd3c69 in -[NSApplication run]
+#38 0x007fff22da7e6c in NSApplicationMain
+#39 0x0000010cd75f79 in EditorMain(int, char const**)
+#40 0x0000010cd761a9 in main
+#41 0x007fff204fff3d in start

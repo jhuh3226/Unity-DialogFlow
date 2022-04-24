@@ -9,8 +9,8 @@ public class UserTestDolphinControl : MonoBehaviour {
     bool dolphinComeBack, dolphinSwim, dolphinAdjustSize = false;
     public Canvas textPetition, petitionTopics;
 
-    public GameObject TankCircle;
-    int countKeyP, countKeyS, countKeyG, countKeyT = 0;
+    public GameObject TankCircle, dolphin;
+    int countKeyP, countKeyS, countKeyG, countKeyT, countKeyB = 0;
 
     private Vector3 scaleChange;
 
@@ -67,11 +67,17 @@ public class UserTestDolphinControl : MonoBehaviour {
             countKeyT++;
         }
 
+        // show tank
+        if (Input.GetKeyDown (KeyCode.B)) {
+            countKeyB++;
+        }
+
         if (dolphinComeBack) Call (); // call dolphin
         if (dolphinSwim) Swim (); // dolphi rotate around beizer curve
         ShowPetitionGuide (); // show/hide petition guides
         ShowPetition (); // show/hide petition
         ShowTank (); // show/hide tank
+        DolphinSwimAway (); // dolphin says goodbye and disappears
         if (dolphinAdjustSize) AdjustSize (); // resize dolphin
     }
 
@@ -179,4 +185,9 @@ public class UserTestDolphinControl : MonoBehaviour {
         else TankCircle.SetActive (false);
     }
 
+    /*------dolphin swims away or dissapear------*/
+    void DolphinSwimAway () {
+        if (countKeyB % 2 != 0) dolphin.SetActive (false);
+        else dolphin.SetActive (true);
+    }
 }
