@@ -6,9 +6,9 @@ public class PlayerController : MonoBehaviour {
 
     public CharacterController controller;
 
-    [SerializeField] private Rigidbody rigidbody;   // joystick
-    [SerializeField] private FixedJoystick joystick;    // joystick
-    [SerializeField] private Animator _animator;    // joystick
+    [SerializeField] private Rigidbody rigidbody; // joystick
+    [SerializeField] private FixedJoystick joystick; // joystick
+    [SerializeField] private Animator _animator; // joystick
 
     Vector3 direction;
     bool up, down, stay = false;
@@ -27,6 +27,10 @@ public class PlayerController : MonoBehaviour {
     void FixedUpdate () {
         // keyboard control
         // activate character controller to use it
+        // if keyboard is pressing arrows, disable character controll
+        if (Input.GetKeyDown (KeyCode.UpArrow) || Input.GetKeyDown (KeyCode.DownArrow) || Input.GetKeyDown (KeyCode.RightArrow) || Input.GetKeyDown (KeyCode.LeftArrow)) {
+            controller.enabled = true;
+        }
         float horizontal = Input.GetAxisRaw ("Horizontal");
         float vertical = Input.GetAxisRaw ("Vertical");
         Vector3 direction = new Vector3 (horizontal, 0f, vertical).normalized;
@@ -40,20 +44,20 @@ public class PlayerController : MonoBehaviour {
 
         // joystick control
         // deactivate character controller to use it
-        if (Input.GetKeyDown (KeyCode.D)) {
-            up = true;
-            stay = false;
-            down = false;
-        } else if (Input.GetKeyDown (KeyCode.S)) {
-            up = false;
-            stay = true;
-            down = false;
-            direction = Vector3.zero;
-        } else if (Input.GetKeyDown (KeyCode.A)) {
-            up = false;
-            stay = false;
-            down = true;
-        }
+        // if (Input.GetKeyDown (KeyCode.D)) {
+        //     up = true;
+        //     stay = false;
+        //     down = false;
+        // } else if (Input.GetKeyDown (KeyCode.S)) {
+        //     up = false;
+        //     stay = true;
+        //     down = false;
+        //     direction = Vector3.zero;
+        // } else if (Input.GetKeyDown (KeyCode.A)) {
+        //     up = false;
+        //     stay = false;
+        //     down = true;
+        // }
 
         if (up == true) {
             if ((joystick.Horizontal * 100 > 0 && joystick.Horizontal * 100 < 100) && (joystick.Vertical * 100 > 0 && joystick.Vertical * 100 < 100)) {

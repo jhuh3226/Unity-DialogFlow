@@ -18,6 +18,7 @@ public class BeizerCurve : MonoBehaviour {
     Vector3 beizerPosition;
 
     private bool coroutineAllowed;
+    public CharacterController controller;
 
     private void Start () {
         routeToGo = 0;
@@ -28,6 +29,7 @@ public class BeizerCurve : MonoBehaviour {
         resetOn = false; // need this seperate bool to refrain from Reset() running multiple times
         targetPoint = new Vector3 (0, -90.0f, 0); // camera position always changes
         beizerPosition = new Vector3 (-1.4f, 0.0f, 2.0f);
+        controller = GetComponent<CharacterController> ();
     }
 
     private void FixedUpdate () {
@@ -76,6 +78,7 @@ public class BeizerCurve : MonoBehaviour {
     }
 
     public void RotateDesiredAngle () {
+        controller.enabled = false;
         Debug.Log ("Rotate to desired angle");
         resetOn = true;
         // Debug.Log (transform.rotation.eulerAngles.y);

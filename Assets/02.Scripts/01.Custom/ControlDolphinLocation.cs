@@ -31,7 +31,11 @@ public class ControlDolphinLocation : MonoBehaviour {
     public void MoveTowardsTarget () {
         var offset = targetPoint - transform.position;
         var offsetRotation = 180 - transform.localRotation.eulerAngles.y;
-        //Get the difference.
+        // Get the difference.
+        // Debug.Log (offset.magnitude); 
+        // when step offset of 0.3, there was a problem but, after changing this to 0.1 it solved the problem (but not an ideal solution)
+        // https://answers.unity.com/questions/1135167/step-offset-issue.html
+
         if (offset.magnitude >.1f) {
             controller.enabled = true;
             //If we're further away than .1 unit, move towards the target.
@@ -40,7 +44,7 @@ public class ControlDolphinLocation : MonoBehaviour {
             offset = offset.normalized * moveSpeed;
             //normalize it and account for movement speed.
             controller.Move (offset * Time.deltaTime);
-            transform.position = new Vector3 (transform.position.x, 0, transform.position.z);   // set this 0 as y positiog keeps becoming 0.035f
+            // transform.position = new Vector3 (transform.position.x, 0, transform.position.z);   // set this 0 as y positiog keeps becoming 0.035f
             transform.Rotate (0.0f, offsetRotation * Time.deltaTime * (1 / moveSpeed), 0.0f);
             //actually move the character.
         } else {
