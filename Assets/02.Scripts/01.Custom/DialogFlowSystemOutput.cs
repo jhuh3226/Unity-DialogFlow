@@ -7,6 +7,7 @@ using UnityEngine;
 public class DialogFlowSystemOutput : MonoBehaviour {
     public string userInput, previousUserInput = null;
     public string systemOutput, previousSystemOutput = null; // systemOuput is the dialogflow's response
+    string responsePetition, responsePetitionGuide, responseShowTank, responseSizeUp, responseCallDolphin = "";
 
     public GameObject dolphin, arSessionOrigin, dfClient;
     private Vector3 scaleChange;
@@ -20,10 +21,14 @@ public class DialogFlowSystemOutput : MonoBehaviour {
 
     void Awake () {
         scaleChange = new Vector3 (3f, 3f, 3f);
+        ChatbotResponseString ();
     }
 
     // once the string value changes, check the value and respond
     void Update () {
+        StringCleaner (); // chatbot's response is showing <speak> and </speak>, get rid of them
+
+        Debug.Log ("systemOutput:" + systemOutput);
         if (userInput != previousUserInput) {
             Debug.Log ("new user input detected");
             previousUserInput = userInput;
@@ -35,13 +40,19 @@ public class DialogFlowSystemOutput : MonoBehaviour {
                 Debug.Log ("Change animation");
 
                 m_Animator.SetBool ("IsNodHead", true);
-            }
-
-            if (systemOutput == "Oh no! I may look small now but in fact gigantic. There's the way I can show you, wait!") {
+            } else if (systemOutput == "Oh no! I may look small now but in fact gigantic. There's the way I can show you, wait!") {
                 Debug.Log ("Change the size of the dolphin");
 
                 // dolphin.transform.localScale = new Vector3 (2f, 2f, 2f);
                 Invoke ("ScaleUp", 6f);
+            }
+            // call dolphin
+            else if (systemOutput == responseCallDolphin) {
+                Debug.Log ("Bring dolphin back");
+            }
+            // petition
+            else if (systemOutput == responsePetition) {
+                Debug.Log ("Show petition guide");
             }
 
             previousSystemOutput = systemOutput;
@@ -57,7 +68,22 @@ public class DialogFlowSystemOutput : MonoBehaviour {
     // once the user clicks the button, then it sends the size to the dialogflow and play the certain intent?
     public void GetArea () {
         var area = arSessionOrigin.GetComponent<PlaneAreaManager> ().area;
-        Debug.Log(area);
-        dfClient.GetComponent<DF2ClientAudioTester>().SendResponse(area);
+        Debug.Log (area);
+        dfClient.GetComponent<DF2ClientAudioTester> ().SendResponse (area);
+    }
+
+    void StringCleaner () {
+        string speak = "<speak>";
+        string speakEnd = "</speak>";
+        systemOutput = systemOutput.Replace (speak, "");
+        systemOutput = systemOutput.Replace (speakEnd, "");
+    }
+
+    void ChatbotResponseString () {
+        responsePetition = "Thank you! Shout out the message and press the button.";
+        // responsePetitionGuide = ;
+        // responseShowTank = ;
+        // responseSizeUp = ;
+        responseCallDolphin = "Yes, I'm here!";
     }
 }
