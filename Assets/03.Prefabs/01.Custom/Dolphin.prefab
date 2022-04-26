@@ -210,7 +210,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.45882353, g: 0.6, b: 1, a: 1}
+  m_Color: {r: 0.8352941, g: 0.88235295, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1202,11 +1202,12 @@ GameObject:
   - component: {fileID: 236891143}
   - component: {fileID: 236891142}
   - component: {fileID: 236891138}
+  - component: {fileID: 236891147}
   - component: {fileID: 236891139}
   - component: {fileID: 236891145}
-  - component: {fileID: 7495827307710673515}
   - component: {fileID: 8943683931467817820}
-  - component: {fileID: 236891147}
+  - component: {fileID: 7495827307710673515}
+  - component: {fileID: 3639819706073659248}
   m_Layer: 0
   m_Name: Dolphin
   m_TagString: Untagged
@@ -1302,6 +1303,23 @@ MonoBehaviour:
   tiltAngle: 10
   playerSpeed: 0.5
   turnSmoothTime: 0.5
+--- !u!114 &236891147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5217000249125063069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 607a92f3b7d3342358a1678ed25e2815, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 1571050855630948701}
+  textPetition: {fileID: 1550661341}
+  petitionTopics: {fileID: 0}
+  TankCircle: {fileID: 0}
+  dolphin: {fileID: 5217000249125063069}
 --- !u!114 &236891139
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1433,20 +1451,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &7495827307710673515
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5217000249125063069}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84b3bcc6849ba4f6fa95fa5b390ac4f8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  arCamera: {fileID: 0}
-  moveSpeed: 0.5
 --- !u!114 &8943683931467817820
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1470,7 +1474,7 @@ MonoBehaviour:
   beizerCurveOn: 0
   resetOn: 0
   controller: {fileID: 236891142}
---- !u!114 &236891147
+--- !u!114 &7495827307710673515
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1479,12 +1483,28 @@ MonoBehaviour:
   m_GameObject: {fileID: 5217000249125063069}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 607a92f3b7d3342358a1678ed25e2815, type: 3}
+  m_Script: {fileID: 11500000, guid: 84b3bcc6849ba4f6fa95fa5b390ac4f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 1571050855630948701}
-  textPetition: {fileID: 1550661341}
-  petitionTopics: {fileID: 0}
+  arCamera: {fileID: 0}
+  moveSpeed: 0.5
+--- !u!114 &3639819706073659248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5217000249125063069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df3b143d574634265a4f8400cac17960, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 0}
+  dolphinComeBack: 0
+  dolphinSwim: 0
+  dolphinAdjustSize: 0
+  tank: {fileID: 0}
 --- !u!1 &5924204281532173175
 GameObject:
   m_ObjectHideFlags: 0

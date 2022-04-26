@@ -32,6 +32,7 @@ public class DF2ClientAudioTester : MonoBehaviour {
 	// Start is called before the first frame update
 
 	public string petitionText = "";
+	public bool dolphinSpeaking = false;
 
 	void Start () {
 		client = GetComponent<DialogFlowV2Client> ();
@@ -127,15 +128,24 @@ public class DF2ClientAudioTester : MonoBehaviour {
 
 		audioPlayer.clip = clip;
 
+		Debug.Log ("Audio clip length : " + audioPlayer.clip.length);
+
 		// changed to invoke
-		Invoke ("playAudio", 1f);
+		Invoke ("playAudio", 0.5f);
+		Invoke ("ChangeToDefaultAnimation", 0.5f + audioPlayer.clip.length);
 		// audioPlayer.Play();
 
 	}
 
 	// added to use invoke
 	public void playAudio () {
+		dolphinSpeaking = true;
 		audioPlayer.Play ();
+	}
+
+	void ChangeToDefaultAnimation () {
+		Debug.Log ("Change to default animation");
+		dolphinSpeaking = false;
 	}
 
 	private void LogError (DF2ErrorResponse errorResponse) {
@@ -167,7 +177,7 @@ public class DF2ClientAudioTester : MonoBehaviour {
 		//client.AddEntityType(names, sessionName);
 		//client.AddEntityType(items, sessionName);
 
-		Debug.Log ("content.text: " + content.text + " sessionName: " + sessionName);
+		// Debug.Log ("content.text: " + content.text + " sessionName: " + sessionName);	// context.text is user's input
 
 		client.DetectIntentFromText (content.text, sessionName, languageCode);
 
@@ -206,7 +216,7 @@ public class DF2ClientAudioTester : MonoBehaviour {
 	AudioClip recordedAudioClip;
 
 	//Keep this one as a global variable (outside the functions) too and use GetComponent during start to save resources
-	//AudioSource audioSource;
+	AudioSource audioSource;
 
 	private float startRecordingTime;
 
@@ -215,22 +225,21 @@ public class DF2ClientAudioTester : MonoBehaviour {
 
 	public Text recordButtonText;
 
-	public Sprite squeakImg,sendImg;
+	public Sprite squeakImg, sendImg;
 	public GameObject btnRecord;
-
 
 	public void OnButtonRecord () {
 		if (!isRecording) {
 			StartRecord ();
 			isRecording = true;
 			recordButtonText.text = "Send to dolphin";
-			btnRecord.GetComponent<Image>().sprite = sendImg; 	// change the btn image
+			btnRecord.GetComponent<Image> ().sprite = sendImg; // change the btn image
 
 		} else {
 			isRecording = false;
 			recordButtonText.text = "Squeak!";
 			AudioClip recorded = StopRecord ();
-			btnRecord.GetComponent<Image>().sprite = squeakImg;		// change the btn image
+			btnRecord.GetComponent<Image> ().sprite = squeakImg; // change the btn image
 
 			byte[] audioBytes = WavUtility.FromAudioClip (recorded);
 			string audioString = Convert.ToBase64String (audioBytes);

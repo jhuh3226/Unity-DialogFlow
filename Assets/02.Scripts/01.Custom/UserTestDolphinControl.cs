@@ -67,7 +67,7 @@ public class UserTestDolphinControl : MonoBehaviour {
             countKeyT++;
         }
 
-        // show tank
+        // dolphin dissapear
         if (Input.GetKeyDown (KeyCode.B)) {
             countKeyB++;
         }

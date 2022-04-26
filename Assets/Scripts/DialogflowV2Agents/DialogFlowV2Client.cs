@@ -186,7 +186,7 @@ namespace Syrus.Plugins.DFV2Client {
 
 			string jsonInput = JsonConvert.SerializeObject (request, settings);
 
-			Debug.Log ("Json: " + jsonInput);
+			// Debug.Log ("Json: " + jsonInput);
 
 			byte[] body = Encoding.UTF8.GetBytes (jsonInput);
 

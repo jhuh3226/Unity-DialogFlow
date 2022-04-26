@@ -8,7 +8,7 @@ public class OutputPetition : MonoBehaviour {
     // Start is called before the first frame update
     [SerializeField] private TextMeshProUGUI textMeshPro;
     [SerializeField] private GameObject dfClient;
-    string petition;
+    public string petition;
     TextInfo textInfo;      // https://docs.microsoft.com/en-us/dotnet/api/system.globalization.textinfo.totitlecase?view=net-6.0
     void Start () {
         textInfo = new CultureInfo ("en-US", false).TextInfo;
@@ -30,7 +30,7 @@ public class OutputPetition : MonoBehaviour {
     Petition shows up
     */
     public void OutputPetitionText () {
-        petition = dfClient.GetComponent<DF2ClientAudioTester> ().petitionText;
+        // petition = dfClient.GetComponent<DF2ClientAudioTester> ().petitionText;
         textMeshPro.text = textInfo.ToTitleCase (petition);
     }
 }
