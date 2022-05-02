@@ -7,7 +7,7 @@ using UnityEngine;
 public class DialogFlowSystemOutput : MonoBehaviour {
     public string userInput, previousUserInput = null;
     public string systemOutput, previousSystemOutput = null; // systemOutput is the dialogflow's response
-    string responseNearestDolphin, responseBeFriended, responseShowTank, responseMessageToShare, responsePetition, responseSwimRound, responseCallDolphin, responseSizeUp, responseSizeDown, responseShowTrickJumpHigh, responseShowTrickTurn, responseShowPlane, responseScannedFloor, responseHidePlane, responsePetitionGuide, responseShowPetition = "";
+    string responseNearestDolphin, responseBeFriended, responseShowTank, responseMessageToShare, responsePetition, responseSwimRound, responseCallDolphin, responseSizeUp, responseSizeDown, responseShowTrickJumpHigh, responseShowTrickTurn, responseShowPlane, responseScannedFloor, responseHidePlane, responsePetitionGuide, responseShowPetition, responsePetitionOutcome, responseHeadOut, responseBye = "";
 
     public GameObject dolphin, arSessionOrigin, dfClient, textPetition;
     private Vector3 scaleChange;
@@ -27,7 +27,7 @@ public class DialogFlowSystemOutput : MonoBehaviour {
     void Update () {
         StringCleaner ();
 
-        Debug.Log ("systemInput:" + userInput);
+        // Debug.Log ("systemInput:" + userInput);
 
         if (userInput != previousUserInput) {
             Debug.Log ("new user input detected");
@@ -132,22 +132,25 @@ public class DialogFlowSystemOutput : MonoBehaviour {
 
     /*------set string that will used as detection phrases to spark dolphin's interaction------*/
     void ChatbotResponseString () {
-        responseNearestDolphin = "Great to hear that I am the closest one. There're around 400 dolphins living in the aquarium. What is a coincidence!"; // partial string
-        responseBeFriended = "Yay! We are friends! I want to know more about you. Where are you?";
-        responseShowTank = "I'm also at home, which is this tank that you see. Can you see it?";
-        responsePetition = "Thank you! Shout out the message and press the button.";
+        responseNearestDolphin = "What a coincidence!"; // partial string
+        responseBeFriended = "Yay! We are friends!";
+        responseShowTank = "Can you see it?";
         responseSwimRound = "I'm going to swim around";
         responseCallDolphin = "I'm back! How was it?"; // partial string. check if string has folloing string
         responseSizeUp = "I'll show you. Move away!";
         responseSizeDown = "Let me get smaller to talk to you.";
-        responseShowPlane = "Do you see the blue area appearing?";
+        responseShowPlane = "Please point your phone towards the ground and scan to measure the area.";
         responseScannedFloor = "I got the number"; // partial string
-        responseHidePlane = "Let's jump to a different story";
-        responsePetitionGuide = "These are the messages dolphins want to say. We need your voice to spread the word. Please say them out loud!";
+        responseHidePlane = "Have you ever been to the sea?";
+        responsePetitionGuide = "These are the messages.";
+        responsePetition = "Please start your sentence with";
         responseMessageToShare = "Is that what you want to share with others?";
         responseShowPetition = "It's your message and also your first"; // partial string
-        responseShowTrickJumpHigh = "I've been learning these tricks from one year old";
+        responseShowTrickJumpHigh = "I've been learning these tricks since I was one";
         responseShowTrickTurn = "I have to do difficult tricks like this one";
+        responsePetitionOutcome = "Also, the life of aquarium dolphins will change faster";
+        responseHeadOut = "Please say goodbye to close the portal";
+        responseBye = "See you later";
     }
 
     /*------animation control------*/
