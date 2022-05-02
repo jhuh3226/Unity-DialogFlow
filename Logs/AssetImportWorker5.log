@@ -2470,3 +2470,7 @@ Total: 101.357395 ms (FindLiveObjects: 1.029827 ms CreateObjectMapping: 0.635857
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.014590 seconds.
