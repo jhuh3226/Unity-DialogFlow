@@ -8,12 +8,12 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 0
-    path: Assets/DialogScenes/SampleScene.unity
-    guid: 35451ab17002abd40b80666b81ecf5fd
   - enabled: 1
     path: Assets/01.Scenes/01.DolphinCaptivity/Squeak.unity
     guid: ec764459b3f7f47358e4f10a7574b7c5
+  - enabled: 0
+    path: Assets/NatML/Examples/ReplayCam/ReplayCam.unity
+    guid: d3534cd9262b64c779e2d78c6ee5a5b1
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: ec157cacc8b204c6697ce4194a66ead5,
       type: 2}
