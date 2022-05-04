@@ -7,9 +7,9 @@ using UnityEngine;
 public class DialogFlowSystemOutput : MonoBehaviour {
     public string userInput, previousUserInput = null;
     public string systemOutput, previousSystemOutput = null; // systemOutput is the dialogflow's response
-    string responseNearestDolphin, responseBeFriended, responseShowTank, responseMessageToShare, responsePetition, responseSwimRound, responseCallDolphin, responseSizeUp, responseSizeDown, responseShowTrickJumpHigh, responseShowTrickTurn, responseShowPlane, responseScannedFloor, responseHidePlane, responsePetitionGuide, responseShowPetition, responsePetitionOutcome, responseHeadOut, responseBye = "";
+    string responseName, responseNearestDolphin, responseBeFriended, responseShowTank, responseMessageToShare, responsePetition, responseSwimRound, responseCallDolphin, responseSizeUp, responseSizeDown, responseShowTrickJumpHigh, responseShowTrickTurn, responseShowPlane, responseScannedFloor, responseHidePlane, responsePetitionGuide, responseHidePetitionGuide, responseShowPetition, responsePetitionOutcome, responseHeadOut, responseBye = "";
 
-    public GameObject dolphin, arSessionOrigin, dfClient, textPetition;
+    public GameObject dolphin, arSessionOrigin, dfClient, textPetition, textName;
     private Vector3 scaleChange;
     float area;
 
@@ -41,6 +41,23 @@ public class DialogFlowSystemOutput : MonoBehaviour {
             playOtherAnimation = false; // whenever there is new reponse set it as false to enable talk/ default animtion
 
             Debug.Log ("new system output detected");
+
+            /*------capture name------*/
+            if (systemOutput.Contains (responseName)) {
+                // Parse only name which is after Hi and before ,
+                string[] words = systemOutput.Split (' ');
+                int counter = 0;
+                foreach (var word in words) {
+                    if (counter == 1) {
+                        Debug.Log (word);
+                        string userName = word;
+                        string comma = ",";
+                        userName = userName.Replace (comma, "");
+                        textName.GetComponent<OutputName> ().name = userName; // pass the saved data
+                    }
+                    counter++;
+                }
+            }
 
             /*------show tank------*/
             if (systemOutput.Contains (responseShowTank)) {
@@ -91,11 +108,18 @@ public class DialogFlowSystemOutput : MonoBehaviour {
                 dolphin.GetComponent<DolphinInteraction> ().petitionGuideTriggered = true;
             }
 
+            // hide petition guide
+            if (systemOutput.Contains (responseHidePetitionGuide)) {
+                dolphin.GetComponent<DolphinInteraction> ().petitionGuideTriggered = true; // hide the UI
+            }
+
             // save pledge string
             if (systemOutput.Contains (responseMessageToShare)) {
-                dolphin.GetComponent<DolphinInteraction> ().petitionGuideTriggered = true; // hide the UI
                 Debug.Log ("Petition: " + dfClient.GetComponent<DF2ClientAudioTester> ().petitionText);
                 string myPetition = dfClient.GetComponent<DF2ClientAudioTester> ().petitionText;
+                // remove "I'd like to say" from what user said
+                string stringToDelete = "i'd like to say";
+                myPetition = myPetition.Replace (stringToDelete, "");
                 textPetition.GetComponent<OutputPetition> ().petition = myPetition; // pass the saved data to out put petition
             }
 
@@ -132,6 +156,7 @@ public class DialogFlowSystemOutput : MonoBehaviour {
 
     /*------set string that will used as detection phrases to spark dolphin's interaction------*/
     void ChatbotResponseString () {
+        responseName = "Great to meet you!"; // capture name
         responseNearestDolphin = "What a coincidence!"; // partial string
         responseBeFriended = "Yay! We are friends!";
         responseShowTank = "Can you see it?";
@@ -143,6 +168,7 @@ public class DialogFlowSystemOutput : MonoBehaviour {
         responseScannedFloor = "I got the number"; // partial string
         responseHidePlane = "Have you ever been to the sea?";
         responsePetitionGuide = "These are the messages.";
+        responseHidePetitionGuide = "Superb. You said";
         responsePetition = "Please start your sentence with";
         responseMessageToShare = "Is that what you want to share with others?";
         responseShowPetition = "It's your message and also your first"; // partial string

@@ -7,7 +7,7 @@ public class DolphinInteraction : MonoBehaviour {
     [SerializeField] Animator animator;
     public bool IsJumpHigh, IsJumpSmooth, IsTurn, IsTalk, IsNodeHead, IsDefault = false;
     public bool dolphinComeBack, dolphinSwim, dolphinAdjustSize = false;
-    public bool swimTriggered, callTriggered, tankTriggered, sizeTriggered, petitionGuideTriggered, petitionTriggerd = false; // bool adjusted from DialogFlowSystemOutput
+    public bool swimTriggered, callTriggered, tankTriggered, sizeTriggered, petitionGuideTriggered, petitionTriggerd; // bool adjusted from DialogFlowSystemOutput
     public float scaleNum = 0.03f;
     public Canvas textPetition, petitionTopics;
 
@@ -19,6 +19,12 @@ public class DolphinInteraction : MonoBehaviour {
     void Start () {
         animator = gameObject.GetComponent<Animator> ();
         tank.SetActive (false);
+        swimTriggered = true;
+        callTriggered = false;
+        tankTriggered = false;
+        sizeTriggered = false;
+        petitionGuideTriggered = false;
+        petitionTriggerd = false;
     }
 
     void Awake () {
