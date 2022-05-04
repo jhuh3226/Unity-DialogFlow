@@ -7,9 +7,9 @@ using UnityEngine;
 public class DialogFlowSystemOutput : MonoBehaviour {
     public string userInput, previousUserInput = null;
     public string systemOutput, previousSystemOutput = null; // systemOutput is the dialogflow's response
-    string responseName, responseNearestDolphin, responseBeFriended, responseShowTank, responseMessageToShare, responsePetition, responseSwimRound, responseCallDolphin, responseSizeUp, responseSizeDown, responseShowTrickJumpHigh, responseShowTrickTurn, responseShowPlane, responseScannedFloor, responseHidePlane, responsePetitionGuide, responseHidePetitionGuide, responseShowPetition, responsePetitionOutcome, responseHeadOut, responseBye = "";
+    string responseHello, responseName, responseNearestDolphin, responseBeFriended, responseShowTank, responseMessageToShare, responsePetition, responseSwimRound, responseCallDolphin, responseSizeUp, responseSizeDown, responseShowTrickJumpHigh, responseShowTrickTurn, responseShowPlane, responseScannedFloor, responseHidePlane, responsePetitionGuide, responseHidePetitionGuide, responseShowPetition, responsePetitionOutcome, responseHeadOut, responseBye = "";
 
-    public GameObject dolphin, arSessionOrigin, dfClient, textPetition, textName;
+    public GameObject dolphin, arSessionOrigin, dfClient, textPetition, textName, eventSystem;
     private Vector3 scaleChange;
     float area;
 
@@ -57,6 +57,12 @@ public class DialogFlowSystemOutput : MonoBehaviour {
                     }
                     counter++;
                 }
+            }
+
+            /*------initial greeting------*/
+            if (systemOutput.Contains (responseHello)) {
+                Debug.Log ("Call dolphin");
+                dolphin.GetComponent<DolphinInteraction> ().callTriggered = true;
             }
 
             /*------show tank------*/
@@ -110,6 +116,7 @@ public class DialogFlowSystemOutput : MonoBehaviour {
 
             // hide petition guide
             if (systemOutput.Contains (responseHidePetitionGuide)) {
+                Debug.Log("hide guide");
                 dolphin.GetComponent<DolphinInteraction> ().petitionGuideTriggered = true; // hide the UI
             }
 
@@ -127,6 +134,13 @@ public class DialogFlowSystemOutput : MonoBehaviour {
             if (systemOutput.Contains (responseShowPetition)) {
                 Debug.Log ("Show petition");
                 dolphin.GetComponent<DolphinInteraction> ().petitionTriggerd = true;
+            }
+
+            // dolphin goodbye
+            if (systemOutput.Contains (responseBye)) {
+                Debug.Log ("Dolphin swims away and dissapear");
+                dolphin.GetComponent<DolphinInteraction> ().swimTriggered = true;
+                eventSystem.GetComponent<UiController> ().enablePortal = true;
             }
 
             /*------animation apart from default/talk------*/
@@ -156,6 +170,7 @@ public class DialogFlowSystemOutput : MonoBehaviour {
 
     /*------set string that will used as detection phrases to spark dolphin's interaction------*/
     void ChatbotResponseString () {
+        responseHello = "Hi stranger";
         responseName = "Great to meet you!"; // capture name
         responseNearestDolphin = "What a coincidence!"; // partial string
         responseBeFriended = "Yay! We are friends!";
@@ -168,9 +183,9 @@ public class DialogFlowSystemOutput : MonoBehaviour {
         responseScannedFloor = "I got the number"; // partial string
         responseHidePlane = "Have you ever been to the sea?";
         responsePetitionGuide = "These are the messages.";
-        responseHidePetitionGuide = "Superb. You said";
+        responseHidePetitionGuide = "Superb! You said";
         responsePetition = "Please start your sentence with";
-        responseMessageToShare = "Is that what you want to share with others?";
+        responseMessageToShare = "what you want to share with others?";
         responseShowPetition = "It's your message and also your first"; // partial string
         responseShowTrickJumpHigh = "I've been learning these tricks since I was one";
         responseShowTrickTurn = "I have to do difficult tricks like this one";

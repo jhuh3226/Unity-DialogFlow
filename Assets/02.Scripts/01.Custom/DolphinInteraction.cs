@@ -12,7 +12,7 @@ public class DolphinInteraction : MonoBehaviour {
     public Canvas textPetition, petitionTopics;
 
     int countTankTrigger, countSizeTrigger, countPetitionGuideTrigger, countPetitionTrigger = 0;
-    public GameObject tank;
+    public GameObject tank, dolphin, portal, eventSystem;
 
     private Vector3 scaleChange;
 
@@ -204,6 +204,13 @@ public class DolphinInteraction : MonoBehaviour {
             animator.SetBool ("IsTalk", false);
             animator.SetBool ("IsNodHead", false);
             animator.SetBool ("IsDefault", true);
+        }
+    }
+    private void OnTriggerEnter (Collider other) {
+        if (other.tag == "Portal") {
+            Debug.Log ("Collider with portal");
+            eventSystem.GetComponent<UiController> ().scalePortalOn = true;
+            dolphin.SetActive (false);
         }
     }
 }
