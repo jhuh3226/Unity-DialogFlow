@@ -200,6 +200,11 @@ public class DF2ClientAudioTester : MonoBehaviour {
 			new Dictionary<string, object> (), GetSessionName ());
 	}
 
+	public void SendStartIntent () {
+		client.DetectIntentFromEvent ("start_event",
+			new Dictionary<string, object> (), GetSessionName ());
+	}
+
 	public void Clear () {
 		client.ClearSession (GetSessionName ());
 	}

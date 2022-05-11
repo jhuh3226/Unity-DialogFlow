@@ -8,6 +8,7 @@ public class DialogFlowSystemOutput : MonoBehaviour {
     public string userInput, previousUserInput = null;
     public string systemOutput, previousSystemOutput = null; // systemOutput is the dialogflow's response
     string responseHello, responseName, responseNearestDolphin, responseBeFriended, responseShowTank, responseMessageToShare, responsePetition, responseSwimRound, responseCallDolphin, responseSizeUp, responseSizeDown, responseShowTrickJumpHigh, responseShowTrickTurn, responseShowPlane, responseScannedFloor, responseHidePlane, responsePetitionGuide, responseHidePetitionGuide, responseShowPetition, responsePetitionOutcome, responseHeadOut, responseBye = "";
+    string responseNameRecheck, responseLiveClose, responseShowTankRecheck, responseReadyToSeeInRealSize, responseDoFavor, responseWhatDolphinDo, responseAskDolphinShowExperience, responseAskHelpPetition, responseAskIfHaveMessageToShare = "";
 
     public GameObject dolphin, arSessionOrigin, dfClient, textPetition, textName, eventSystem;
     private Vector3 scaleChange;
@@ -63,7 +64,14 @@ public class DialogFlowSystemOutput : MonoBehaviour {
             if (systemOutput.Contains (responseHello)) {
                 Debug.Log ("Call dolphin");
                 dolphin.GetComponent<DolphinInteraction> ().callTriggered = true;
+                eventSystem.GetComponent<UiController> ().firstSpeechDetected = true;
             }
+
+            /*-----initial greeting failed but user have tried something----*/
+            // if (eventSystem.GetComponent<UiController> ().squeakBtnClickCount == 2) {
+            //     dfClient.GetComponent<DF2ClientAudioTester>().SendStartIntent();        // call event
+            //     dolphin.GetComponent<DolphinInteraction> ().callTriggered = true;
+            // }
 
             /*------show tank------*/
             if (systemOutput.Contains (responseShowTank)) {
@@ -116,7 +124,7 @@ public class DialogFlowSystemOutput : MonoBehaviour {
 
             // hide petition guide
             if (systemOutput.Contains (responseHidePetitionGuide)) {
-                Debug.Log("hide guide");
+                Debug.Log ("hide guide");
                 dolphin.GetComponent<DolphinInteraction> ().petitionGuideTriggered = true; // hide the UI
             }
 
@@ -174,14 +182,11 @@ public class DialogFlowSystemOutput : MonoBehaviour {
         responseName = "Great to meet you!"; // capture name
         responseNearestDolphin = "What a coincidence!"; // partial string
         responseBeFriended = "Yay! We are friends!";
-        responseShowTank = "Can you see it?";
         responseSwimRound = "I'm going to swim around";
         responseCallDolphin = "I'm back! How was it?"; // partial string. check if string has folloing string
         responseSizeUp = "I'll show you. Move away!";
         responseSizeDown = "Let me get smaller to talk to you.";
-        responseShowPlane = "Please point your phone towards the ground and scan to measure the area.";
         responseScannedFloor = "I got the number"; // partial string
-        responseHidePlane = "Have you ever been to the sea?";
         responsePetitionGuide = "These are the messages.";
         responseHidePetitionGuide = "Superb! You said";
         responsePetition = "Please start your sentence with";
@@ -192,6 +197,20 @@ public class DialogFlowSystemOutput : MonoBehaviour {
         responsePetitionOutcome = "Also, the life of aquarium dolphins will change faster";
         responseHeadOut = "Please say goodbye to close the portal";
         responseBye = "See you later";
+
+        // YES or NO trigger replies from chatbot
+        responseNameRecheck = "Did I get your name right?";
+        responseLiveClose = "because I'm the dolphin living closest to you";
+        responseShowTank = "Can you see it?"; // YES OR NO
+        responseShowTankRecheck = "Do you see it?";
+        responseReadyToSeeInRealSize = "ready for that";
+        responseDoFavor = "Can you do something for me";
+        responseShowPlane = "Please point your phone towards the ground and scan to measure the area."; // YES OR NO
+        responseHidePlane = "Have you ever been to the sea?"; // YES OR NO
+        responseWhatDolphinDo = "Do you know what I do at";
+        responseAskDolphinShowExperience = "Have you seen any dolphins shows";
+        responseAskHelpPetition = "can you help me spread our stories";
+        responseAskIfHaveMessageToShare = "Do you have a message you want to share";
     }
 
     /*------animation control------*/

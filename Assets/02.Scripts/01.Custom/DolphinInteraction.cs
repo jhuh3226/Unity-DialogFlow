@@ -89,7 +89,7 @@ public class DolphinInteraction : MonoBehaviour {
 
     /*------call dolphin------*/
     void Call () {
-        Debug.Log ("call dolphin");
+        // Debug.Log ("call dolphin");
         GetComponent<BeizerCurve> ().beizerCurveOn = false;
         GetComponent<ControlDolphinLocation> ().MoveTowardsTarget (); // move dolphin's position to initial starting point
     }
