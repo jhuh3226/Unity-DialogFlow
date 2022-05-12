@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "527457626855",
+    "firebase_url": "https://cetaceans1-xnfk-default-rtdb.firebaseio.com",
+    "project_id": "cetaceans1-xnfk",
+    "storage_bucket": "cetaceans1-xnfk.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:527457626855:android:aa299b8b150236079a1042",
+        "android_client_info": {
+          "package_name": "com.HuhJungDesignStudio.Squeak"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "527457626855-no1rih36a1it24imsu0qkd7mvisphd1m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBQBQSsWWd528zJv-Z_AlX1Hye9dQewF4g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "527457626855-no1rih36a1it24imsu0qkd7mvisphd1m.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "527457626855-3t77jf8v65q6bgabhk575u9jkc7sdqpd.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.HuhJungDesignStudio.Squeak"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
