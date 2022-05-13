@@ -10,7 +10,7 @@ public class DialogFlowSystemOutput : MonoBehaviour {
     string responseHello, responseName, responseNearestDolphin, responseBeFriended, responseShowTank, responseMessageToShare, responsePetition, responseSwimRound, responseCallDolphin, responseSizeUp, responseSizeDown, responseShowTrickJumpHigh, responseShowTrickTurn, responseShowPlane, responseScannedFloor, responseHidePlane, responsePetitionGuide, responseHidePetitionGuide, responseShowPetition, responsePetitionOutcome, responseHeadOut, responseBye = "";
     string responseNameRecheck, responseLiveClose, responseShowTankRecheck, responseReadyToSeeInRealSize, responseDoFavor, responseWhatDolphinDo, responseAskDolphinShowExperience, responseAskHelpPetition, responseAskIfHaveMessageToShare = "";
 
-    public GameObject dolphin, arSessionOrigin, dfClient, textPetition, textName, eventSystem;
+    public GameObject dolphin, arSessionOrigin, dfClient, textPetition, textName, eventSystem, firebaseManager;
     private Vector3 scaleChange;
     float area;
 
@@ -54,6 +54,7 @@ public class DialogFlowSystemOutput : MonoBehaviour {
                         string userName = word;
                         string comma = ",";
                         userName = userName.Replace (comma, "");
+                        firebaseManager.GetComponent<FirebaseMananger> ().name = userName; // send name to firebase manager
                         textName.GetComponent<OutputName> ().name = userName; // pass the saved data
                     }
                     counter++;
@@ -135,6 +136,7 @@ public class DialogFlowSystemOutput : MonoBehaviour {
                 // remove "I'd like to say" from what user said
                 string stringToDelete = "i'd like to say";
                 myPetition = myPetition.Replace (stringToDelete, "");
+                firebaseManager.GetComponent<FirebaseMananger> ().petitionMessage = myPetition; // send petition to firebase
                 textPetition.GetComponent<OutputPetition> ().petition = myPetition; // pass the saved data to out put petition
             }
 
@@ -142,6 +144,7 @@ public class DialogFlowSystemOutput : MonoBehaviour {
             if (systemOutput.Contains (responseShowPetition)) {
                 Debug.Log ("Show petition");
                 dolphin.GetComponent<DolphinInteraction> ().petitionTriggerd = true;
+                firebaseManager.GetComponent<FirebaseMananger> ().CreateUser (); // push data to firebase
             }
 
             // dolphin goodbye

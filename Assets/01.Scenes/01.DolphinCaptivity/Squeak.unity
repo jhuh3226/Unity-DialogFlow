@@ -2713,7 +2713,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &408315594
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2991,7 +2991,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &431907086
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4148,7 +4148,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd141888f7d474e16bcc03e5c7e7c4e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  message: {fileID: 408315594}
+  name: default name
+  petitionMessage: default petition message
 --- !u!4 &761674736
 Transform:
   m_ObjectHideFlags: 0
@@ -8684,6 +8685,7 @@ MonoBehaviour:
   textPetition: {fileID: 1526173339}
   textName: {fileID: 1632199294}
   eventSystem: {fileID: 1631556405}
+  firebaseManager: {fileID: 761674734}
 --- !u!114 &1631556410
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9686,7 +9688,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1710577712
 MonoBehaviour:
   m_ObjectHideFlags: 0
