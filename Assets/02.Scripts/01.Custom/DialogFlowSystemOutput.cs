@@ -134,7 +134,7 @@ public class DialogFlowSystemOutput : MonoBehaviour {
                 Debug.Log ("Petition: " + dfClient.GetComponent<DF2ClientAudioTester> ().petitionText);
                 string myPetition = dfClient.GetComponent<DF2ClientAudioTester> ().petitionText;
                 // remove "I'd like to say" from what user said
-                string stringToDelete = "i'd like to say";
+                string stringToDelete = "I'd like to say";
                 myPetition = myPetition.Replace (stringToDelete, "");
                 firebaseManager.GetComponent<FirebaseMananger> ().petitionMessage = myPetition; // send petition to firebase
                 textPetition.GetComponent<OutputPetition> ().petition = myPetition; // pass the saved data to out put petition

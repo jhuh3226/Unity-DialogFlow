@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:keep="@string/firebase_database_url,@string/gcm_defaultSenderId,@string/google_storage_bucket,@string/project_id,@string/google_api_key,@string/google_crash_reporting_api_key,@string/google_app_id,@string/default_web_client_id">
+  <string name="firebase_database_url" translatable="false">https://cetaceans1-xnfk-default-rtdb.firebaseio.com</string>
+  <string name="gcm_defaultSenderId" translatable="false">527457626855</string>
+  <string name="google_storage_bucket" translatable="false">cetaceans1-xnfk.appspot.com</string>
+  <string name="project_id" translatable="false">cetaceans1-xnfk</string>
+  <string name="google_api_key" translatable="false">AIzaSyBQBQSsWWd528zJv-Z_AlX1Hye9dQewF4g</string>
+  <string name="google_crash_reporting_api_key" translatable="false">AIzaSyBQBQSsWWd528zJv-Z_AlX1Hye9dQewF4g</string>
+  <string name="google_app_id" translatable="false">1:527457626855:android:aa299b8b150236079a1042</string>
+  <string name="default_web_client_id" translatable="false">527457626855-no1rih36a1it24imsu0qkd7mvisphd1m.apps.googleusercontent.com</string>
+</resources>

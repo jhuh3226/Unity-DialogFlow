@@ -189,6 +189,10 @@ PlayerSettings:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 4800000, guid: e7c77f6eaab324a819efdc13b8125a39, type: 3}
+  - {fileID: -7396252186314632823, guid: 466786db3ce134467a90cc80111322c5, type: 2}
+  - {fileID: 0}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -206,7 +210,7 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
-    Android: com.DefaultCompany.UnityDialogflowV2Agents
+    Android: com.HuhJungDesignStudio.Squeak
     Standalone: com.DefaultCompany.UnityDialogflowV2Agents
     iPhone: com.HuhJungDesignStudio.Squeak
   buildNumber:
