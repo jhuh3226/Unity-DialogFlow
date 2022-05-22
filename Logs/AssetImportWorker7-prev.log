@@ -256,3 +256,104 @@ Total: 8.141850 ms (FindLiveObjects: 0.395714 ms CreateObjectMapping: 0.310633 m
 Received Prepare
 Registering precompiled user dll's ...
 Registered in 0.690158 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 3.45 ms, found 6 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+UnityEngine.Assertions.AssertionException: Assertion failure. Value was Null
+Expected: Value was not Null
+  at UnityEngine.Assertions.Assert.Fail (System.String message, System.String userMessage) [0x0003c] in /Users/bokken/buildslave/unity/build/Runtime/Export/Assertions/Assert/AssertBase.cs:29 
+  at UnityEngine.Assertions.Assert.IsNotNull[T] (T value, System.String message) [0x00042] in /Users/bokken/buildslave/unity/build/Runtime/Export/Assertions/Assert/AssertNull.cs:50 
+  at UnityEngine.Assertions.Assert.IsNotNull[T] (T value) [0x00001] in /Users/bokken/buildslave/unity/build/Runtime/Export/Assertions/Assert/AssertNull.cs:38 
+  at ARFoundationRemote.Editor.ARFaceEditorMemorySafetyErrorFixer.IsFixApplied () [0x00016] in /Users/junghuh/Documents/GitHub/Unity-DialogFlow/Packages/com.kyrylokuzyk.arfoundationremote/Editor/FixesForEditorSupport/ARFaceEditorMemorySafetyErrorFixer.cs:34 
+  at ARFoundationRemote.Editor.ARFaceEditorMemorySafetyErrorFixer.ApplyIfNeeded () [0x00000] in /Users/junghuh/Documents/GitHub/Unity-DialogFlow/Packages/com.kyrylokuzyk.arfoundationremote/Editor/FixesForEditorSupport/ARFaceEditorMemorySafetyErrorFixer.cs:15 
+  at ARFoundationRemote.Editor.FixesForEditorSupport.Apply (System.Boolean force) [0x00012] in /Users/junghuh/Documents/GitHub/Unity-DialogFlow/Packages/com.kyrylokuzyk.arfoundationremote/Editor/FixesForEditorSupport/FixesForEditorSupport.cs:18 
+  at ARFoundationRemote.Editor.FixesForEditorSupport..cctor () [0x00000] in /Users/junghuh/Documents/GitHub/Unity-DialogFlow/Packages/com.kyrylokuzyk.arfoundationremote/Editor/FixesForEditorSupport/FixesForEditorSupport.cs:11 
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[]) (at /Users/bokken/buildslave/unity/build/Editor/Mono/EditorAssemblies.cs:118)
+
+(Filename: /Users/bokken/buildslave/unity/build/Editor/Mono/EditorAssemblies.cs Line: 118)
+
+ArgumentNullException: Value cannot be null.
+Parameter name: source
+  at System.Linq.Enumerable.Any[TSource] (System.Collections.Generic.IEnumerable`1[T] source, System.Func`2[T,TResult] predicate) [0x0000d] in <351e49e2a5bf4fd6beabb458ce2255f3>:0 
+  at NatSuite.Sharing.Editor.NatShare.Import () [0x00194] in /Users/junghuh/Documents/GitHub/Unity-DialogFlow/Assets/NatSuite/Importers/NatShare.cs:62 
+
+Mono: successfully reloaded assembly
+- Completed reload, in  2.598 seconds
+Platform modules already initialized, skipping
+Switching build target platform(2) subTarget(0) extendedPlatform(0) -> platform(9) subTarget(16777218) extendedPlatform(0)
+Refreshing native plugins compatible for Editor in 2.61 ms, found 6 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3527 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 243.9 MB.
+System memory in use after: 244.2 MB.
+
+Unloading 161 unused Assets to reduce memory usage. Loaded Objects now: 3921.
+Total: 9.869871 ms (FindLiveObjects: 0.424710 ms CreateObjectMapping: 0.320101 ms MarkObjects: 8.839554 ms  DeleteObjects: 0.265673 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.020436 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 1.88 ms, found 6 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+UnityEngine.Assertions.AssertionException: Assertion failure. Value was Null
+Expected: Value was not Null
+  at UnityEngine.Assertions.Assert.Fail (System.String message, System.String userMessage) [0x0003c] in /Users/bokken/buildslave/unity/build/Runtime/Export/Assertions/Assert/AssertBase.cs:29 
+  at UnityEngine.Assertions.Assert.IsNotNull[T] (T value, System.String message) [0x00042] in /Users/bokken/buildslave/unity/build/Runtime/Export/Assertions/Assert/AssertNull.cs:50 
+  at UnityEngine.Assertions.Assert.IsNotNull[T] (T value) [0x00001] in /Users/bokken/buildslave/unity/build/Runtime/Export/Assertions/Assert/AssertNull.cs:38 
+  at ARFoundationRemote.Editor.ARFaceEditorMemorySafetyErrorFixer.IsFixApplied () [0x00016] in /Users/junghuh/Documents/GitHub/Unity-DialogFlow/Packages/com.kyrylokuzyk.arfoundationremote/Editor/FixesForEditorSupport/ARFaceEditorMemorySafetyErrorFixer.cs:34 
+  at ARFoundationRemote.Editor.ARFaceEditorMemorySafetyErrorFixer.ApplyIfNeeded () [0x00000] in /Users/junghuh/Documents/GitHub/Unity-DialogFlow/Packages/com.kyrylokuzyk.arfoundationremote/Editor/FixesForEditorSupport/ARFaceEditorMemorySafetyErrorFixer.cs:15 
+  at ARFoundationRemote.Editor.FixesForEditorSupport.Apply (System.Boolean force) [0x00012] in /Users/junghuh/Documents/GitHub/Unity-DialogFlow/Packages/com.kyrylokuzyk.arfoundationremote/Editor/FixesForEditorSupport/FixesForEditorSupport.cs:18 
+  at ARFoundationRemote.Editor.FixesForEditorSupport..cctor () [0x00000] in /Users/junghuh/Documents/GitHub/Unity-DialogFlow/Packages/com.kyrylokuzyk.arfoundationremote/Editor/FixesForEditorSupport/FixesForEditorSupport.cs:11 
+UnityEngine.StackTraceUtility:ExtractStackTrace () (at /Users/bokken/buildslave/unity/build/Runtime/Export/Scripting/StackTrace.cs:37)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[]) (at /Users/bokken/buildslave/unity/build/Editor/Mono/EditorAssemblies.cs:118)
+
+(Filename: /Users/bokken/buildslave/unity/build/Editor/Mono/EditorAssemblies.cs Line: 118)
+
+ArgumentNullException: Value cannot be null.
+Parameter name: source
+  at System.Linq.Enumerable.Any[TSource] (System.Collections.Generic.IEnumerable`1[T] source, System.Func`2[T,TResult] predicate) [0x0000d] in <351e49e2a5bf4fd6beabb458ce2255f3>:0 
+  at NatSuite.Sharing.Editor.NatShare.Import () [0x00194] in /Users/junghuh/Documents/GitHub/Unity-DialogFlow/Assets/NatSuite/Importers/NatShare.cs:62 
+
+Mono: successfully reloaded assembly
+- Completed reload, in  2.413 seconds
+Platform modules already initialized, skipping
+Switching build target platform(2) subTarget(0) extendedPlatform(0) -> platform(9) subTarget(16777218) extendedPlatform(0)
+Refreshing native plugins compatible for Editor in 2.97 ms, found 6 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3527 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 244.8 MB.
+System memory in use after: 245.0 MB.
+
+Unloading 161 unused Assets to reduce memory usage. Loaded Objects now: 3925.
+Total: 8.162171 ms (FindLiveObjects: 0.690559 ms CreateObjectMapping: 0.273001 ms MarkObjects: 7.078294 ms  DeleteObjects: 0.118370 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 1825.73 ms, found 6 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 158 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 180.2 MB.
+System memory in use after: 180.4 MB.
+
+Unloading 158 unused Assets to reduce memory usage. Loaded Objects now: 3925.
+Total: 7.981423 ms (FindLiveObjects: 0.399839 ms CreateObjectMapping: 0.215170 ms MarkObjects: 7.226301 ms  DeleteObjects: 0.138870 ms)
+
